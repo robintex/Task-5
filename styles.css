@@ -45,10 +45,11 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 10px;
 }
 
 table thead {
-    background-color: #0073e6;
+    background-color: #35b310;
     color: #fff;
 }
 

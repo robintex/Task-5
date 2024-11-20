@@ -73,15 +73,20 @@ const renderBooks = (books) => {
             <td>${book.title}</td>
             <td>${book.authors}</td>
             <td>${book.publisher}</td>
-            <td><button class="toggle-details">Show Details</button></td>
+            <td><button class="toggle-details">Show</button></td>
         `;
 
         // Add hidden details row
         const detailsRow = document.createElement("tr");
         detailsRow.classList.add("details-row");
         detailsRow.style.display = "none";
+        detailsRow.style.padding = "30px";
+        detailsRow.style.paddingLeft = "20rem";
         detailsRow.innerHTML = `
             <td colspan="6">
+                <strong>Title : ${book.title}</strong></br>
+                <strong>Author : ${book.authors}</strong></br>
+                <strong>Publisher : ${book.publisher}</strong></br>
                 <strong>Likes:</strong> ${book.likes} | <strong>Reviews:</strong> ${book.reviews}
             </td>
         `;
@@ -90,10 +95,10 @@ const renderBooks = (books) => {
         row.querySelector(".toggle-details").addEventListener("click", (e) => {
             if (detailsRow.style.display === "none") {
                 detailsRow.style.display = "table-row";
-                e.target.textContent = "Hide Details";
+                e.target.textContent = "Hide";
             } else {
                 detailsRow.style.display = "none";
-                e.target.textContent = "Show Details";
+                e.target.textContent = "Show";
             }
         });
 
